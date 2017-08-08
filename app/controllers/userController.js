@@ -1,6 +1,6 @@
 'use strict';
 
-pinApp.controller("userController", function($scope, $window, userFactory) {
+capApp.controller("UserController", function($scope, $window, UserFactory) {
 
   $scope.account = {
     email: "",
@@ -9,7 +9,7 @@ pinApp.controller("userController", function($scope, $window, userFactory) {
 
   $scope.register = () => {
     console.log("you clicked register");
-    userFactory.createUser($scope.account)
+    UserFactory.createUser($scope.account)
     .then( (userData) => {
       console.log("User", userData);
       $scope.login();
@@ -17,10 +17,10 @@ pinApp.controller("userController", function($scope, $window, userFactory) {
   };
 
   $scope.login = () => {
-    userFactory.loginUser($scope.account)
+    UserFactory.loginUser($scope.account)
     .then( (userData) => {
       console.log("userData", userData);
-      $window.location.href = '#!/pin/view';
+      $window.location.href = '#!/capapp/view';
     });
   };
 });
