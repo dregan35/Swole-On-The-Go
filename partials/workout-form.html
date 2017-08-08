@@ -1,0 +1,10 @@
+<div class="createWorkoutForm">
+	<input type="text" name="Bodypart" ng-model="WorkoutItem.Bodypart" placeholder="Bodypart">
+	<input type="text" name="Description" ng-model="WorkoutItem.description" placeholder="Description">
+	<input type="text" name="RepsG" ng-model="WorkoutItem.repsG" placeholder="Reps to gain">
+	<input type="text" name="RepsL" ng-model="WorkoutItem.repsL" placeholder="Reps to lose">
+	<input type="text" name="Sets" ng-model="WorkoutItem.sets" placeholder="Sets">
+	<input type="text" ng-model="WorkoutItem.url">
+	<img src="{{WorkoutItem.url}}" alt="some_text" style="width:128px;height:128px;">
+	<input type="button" class="btn btn-default" value="Add TO Workouts" ng-click="saveWorkout()">
+</div>

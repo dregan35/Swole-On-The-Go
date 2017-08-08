@@ -1,0 +1,42 @@
+<!-- <div class="container">
+  <h2>Choose A Body Part You Would Like To Workout</h2>                   
+  <div class="dropdown dropdown-menu-left">
+    <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Body Part
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Chest</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Back</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Legs</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Triceps</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Biceps</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Shoulders</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Abs</a></li>
+    </ul>
+  </div>
+<!-   ng-model to tie ex workouts.legs and *when dropdown changes call function -->
+<!-- </div>
+<div class="dropdown dropdown-menu-right">
+<h2>Choose A Goal</h2> 
+  <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Workout Goal
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+    <li role="presentation"><a role="menuitem" href="#">Gain Muscle</a></li>
+    <li role="presentation"><a role="menuitem" href="#">Cut Weight</a></li>
+  </ul>
+</div>
+
+</body>
+</html>
+ --> 
+ <div class="cotainer">
+  <form name="workout">
+    <label for="singleSelect"> Select A Body Part: </label><br>
+    <select name="singleSelect" id="BodyParts" ng-model="Workouts.Bodypart">
+      <option ng-repeat="WorkoutItem in Workouts" value="{{}}">{{}}</option>
+      <option value="">Shoulders</option>
+      <option value="">Legs</option>
+      <option value="">Triceps</option>
+      <option value="">Biceps</option>
+      <option value="">Back</option>
+      <option value="">Abs</option>
+    </select><br>
