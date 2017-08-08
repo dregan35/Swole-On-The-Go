@@ -5,7 +5,7 @@ capApp.factory("UserWorkoutsFactory", function($q, $http, FirebaseUrl, FBcreds) 
     let getUserWorkouts = (userId) => {
         console.log("userId", userId);
         return $q((resolve, reject) => {
-            $http.get(`${FirebaseUrl}Workouts.json?orderBy="uid"&equalTo="${userId}"`)
+            $http.get(`${FirebaseUrl}UserWorkouts.json?orderBy="uid"&equalTo="${userId}"`)
                 .then((userWorkoutsData) => {
                     resolve(userWorkoutsData);
                 })
@@ -18,7 +18,7 @@ capApp.factory("UserWorkoutsFactory", function($q, $http, FirebaseUrl, FBcreds) 
 
     let saveUserWorkout = (newWorkout) => {
         return $q((resolve, reject) => {
-            $http.post(`${FirebaseUrl}userWorkouts.json`,
+            $http.post(`${FirebaseUrl}UserWorkouts.json`,
                     angular.toJson(newWorkout))
                 .then((newWorkoutData) => {
                     resolve(newWorkoutData);
