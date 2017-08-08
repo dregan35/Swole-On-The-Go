@@ -1,6 +1,6 @@
 'use strict';
 
-capApp.controller("WorkoutFormController", function($scope, $window, WorkoutFactory, UserFactory, UserWorkoutsFactory) {
+capApp.controller("WorkoutFormController", function($scope, $window, UserFactory, UserWorkoutsFactory) {
  
  
     function fetchUserWorkouts() {
