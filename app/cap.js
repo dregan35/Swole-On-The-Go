@@ -26,12 +26,12 @@ capApp.config( ($routeProvider) => {
     controller: 'WorkoutController',
     resolve: {isAuth}
   })
-  .when('/capapp/workouts', {
+  .when('/capapp/MyWorkouts', {
     templateUrl: 'partials/workouts.html',
-    controller: 'WorkoutController',
+    controller: 'WorkoutFormController',
     resolve: {isAuth}
   })
-  .when('/cappapp/workouts/add', {
+  .when('/cappapp/edit', {
     templateUrl: 'partials/workout-form.html',
     controller: 'WorkoutFormController',
     resolve: {isAuth}

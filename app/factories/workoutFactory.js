@@ -17,6 +17,7 @@ capApp.factory("WorkoutFactory", function($q, $http, FirebaseUrl, FBcreds) {
   };
 
   let postNewWorkout = (newWorkout) => {
+    console.log("newWorkout", newWorkout);
     return $q((resolve, reject) => {
       $http.post(`${FirebaseUrl}UserWorkouts.json`,
       angular.toJson(newWorkout))

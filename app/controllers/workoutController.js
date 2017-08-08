@@ -34,8 +34,10 @@ capApp.controller("WorkoutController", function($scope, $window, WorkoutFactory,
     	$scope.selectChanged = true; 
     };
 
-   $scope.saveWorkout = () => {
-    WorkoutFactory.postNewWorokout($scope.WorkoutItem)
+   $scope.saveWorkout = (workoutItem) => {
+   	console.log("workoutItem", workoutItem);
+   	workoutItem.uid = UserFactory.getUser();
+    WorkoutFactory.postNewWorkout(workoutItem)
     .then( (data) => {
       console.log("new workout data", data);
       $window.location.href = '#!/capapp/view';
