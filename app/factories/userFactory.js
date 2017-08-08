@@ -14,6 +14,7 @@ capApp.factory("UserFactory", function($q, $http, FirebaseUrl, FBcreds) {
   let isAuthenticated = function() {
     return new Promise( (resolve, reject) => {
       firebase.auth().onAuthStateChanged(function(user) {
+        console.log("user", user);
         if (user) {
           currentUser = user.uid;
           resolve(true);

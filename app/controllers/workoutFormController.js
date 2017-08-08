@@ -14,7 +14,7 @@ capApp.controller("WorkoutFormController", function($scope, $window, WorkoutFact
     };
 
 
-    $scope.saveWorkout = () => {
+    $scope.saveUserWorkout = () => {
     	console.log("workoutItem", $scope.WorkoutItem);
     	$scope.WorkoutItem.uid = UserFactory.getUser();
            UserWorkoutsFactory.saveUserWorkout($scope.WorkoutItem)
