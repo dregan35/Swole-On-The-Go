@@ -3,8 +3,7 @@
 capApp.factory("WorkoutFactory", function($q, $http, FirebaseUrl, FBcreds) {
 
 
-  let getAllWorkouts = (userId) => {
-    console.log("userId", userId);
+  let getAllWorkouts = () => {
     return $q((resolve, reject) => {
       $http.get(`${FirebaseUrl}Workouts.json`)
       .then((workData) => {

@@ -10,12 +10,13 @@ capApp.controller("WorkoutController", function($scope, $window, WorkoutFactory,
     
   });
  $scope.workouts = [];
-
+ $scope.selectChanged = false;
     function fetchWorkouts() {
         let workoutArr = [];
         let currentUser = UserFactory.getUser();
-        WorkoutFactory.getWorkouts(currentUser)
+        WorkoutFactory.getAllWorkouts()
             .then((workoutList) => {
+            	console.log("workoutlist", workoutList);
                 let workoutData = workoutList.data;
                 Object.keys(workoutData).forEach((key) => {
                     workoutData[key].id = key;
@@ -29,7 +30,15 @@ capApp.controller("WorkoutController", function($scope, $window, WorkoutFactory,
     }
     fetchWorkouts();
 
+    $scope.chosenOption = function () {
+    	$scope.selectChanged = true; 
+    };
 
-
-
-}); 
+   $scope.saveWorkout = () => {
+    WorkoutFactory.postNewWorokout($scope.WorkoutItem)
+    .then( (data) => {
+      console.log("new workout data", data);
+      $window.location.href = '#!/capapp/view';
+    });
+    };
+});
