@@ -25,15 +25,6 @@ capApp.controller("UserWorkoutsController", function($scope, $window, UserFactor
     fetchUserWorkouts();
 
 
-    $scope.saveUserWorkout = () => {
-    	console.log("workoutItem", $scope.WorkoutItem);
-    	UserWorkoutsFactory.saveUserWorkout($scope.WorkoutItem)
-            .then((data) => {
-                console.log("workout data", data);
-                $window.location.href = '#!/capapp/MyWorkouts';
-            });
-    };
-
     $scope.deleteUserCard = (cardId) => {
     console.log("delete called", cardId);
     UserWorkoutsFactory.deleteUserWorkout(cardId)
