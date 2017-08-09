@@ -1,8 +1,9 @@
 'use strict';
 
-capApp.controller("WorkoutFormController", function($scope, $window, UserFactory, UserWorkoutsFactory) {
+capApp.controller("UserWorkoutsController", function($scope, $window, UserFactory, UserWorkoutsFactory) {
  
- 
+    // $scope.workouts = [];
+
     function fetchUserWorkouts() {
         let workoutArr = [];
         let currentUser = UserFactory.getUser();
@@ -19,6 +20,7 @@ capApp.controller("WorkoutFormController", function($scope, $window, UserFactory
             .catch((err) => {
                 console.log("error", err);
             });
+
     }
     fetchUserWorkouts();
 
@@ -31,6 +33,15 @@ capApp.controller("WorkoutFormController", function($scope, $window, UserFactory
                 $window.location.href = '#!/capapp/MyWorkouts';
             });
     };
+
+    $scope.deleteUserCard = (cardId) => {
+    console.log("delete called", cardId);
+    UserWorkoutsFactory.deleteUserWorkout(cardId)
+    .then( (data) => {
+      console.log("removed item", data);
+      fetchUserWorkouts();
+    });
+  };
 
 });
 

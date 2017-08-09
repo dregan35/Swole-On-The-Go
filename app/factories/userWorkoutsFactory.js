@@ -5,7 +5,7 @@ capApp.factory("UserWorkoutsFactory", function($q, $http, FirebaseUrl, FBcreds) 
     let getUserWorkouts = (userId) => {
         console.log("userId", userId);
         return $q((resolve, reject) => {
-            $http.get(`${FirebaseUrl}UserWorkouts.json?"`)
+            $http.get(`${FirebaseUrl}UserWorkouts.json?orderBy="uid"&equalTo="${userId}"`)
                 .then((userWorkoutsData) => {
                     resolve(userWorkoutsData);
                 })
@@ -33,7 +33,7 @@ capApp.factory("UserWorkoutsFactory", function($q, $http, FirebaseUrl, FBcreds) 
         return $q((resolve, reject) => {
             let userWorkoutId = userWorkouts.id;
             if (userWorkoutId) {
-                $http.put(`${FirebaseUrl}userWorkouts/${userWorkouts}.json`,
+                $http.put(`${FirebaseUrl}UserWorkouts/${userWorkouts}.json`,
                         angular.toJson(userWorkouts))
                     .then((data) => {
                         resolve(data);
@@ -47,10 +47,10 @@ capApp.factory("UserWorkoutsFactory", function($q, $http, FirebaseUrl, FBcreds) 
         });
     };
 
-    let deleteuserWorkout = (userWorkoutId) => {
+    let deleteUserWorkout = (workoutId) => {
         return $q((resolve, reject) => {
-            if (userWorkoutId) {
-                $http.delete(`${FirebaseUrl}Workouts/${userWorkoutId}.json`)
+            if (workoutId) {
+                $http.delete(`${FirebaseUrl}UserWorkouts/${workoutId}.json`)
                     .then((data) => {
                         resolve(data);
                     })
@@ -62,5 +62,5 @@ capApp.factory("UserWorkoutsFactory", function($q, $http, FirebaseUrl, FBcreds) 
             }
         });
     };
-     return { getUserWorkouts, saveUserWorkout, editUserWorkout, deleteuserWorkout };
+     return { getUserWorkouts, saveUserWorkout, editUserWorkout, deleteUserWorkout };
 });
