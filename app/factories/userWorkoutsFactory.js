@@ -29,12 +29,12 @@ capApp.factory("UserWorkoutsFactory", function($q, $http, FirebaseUrl, FBcreds) 
         });
     };
 
-    let saveEditedUserWorkout = (userWorkouts) => {
+    let saveEditedUserWorkout = (id, userWorkout) => {
+        console.log("userWorkouts", id);
         return $q((resolve, reject) => {
-            let userWorkoutId = userWorkouts.id;
-            if (userWorkoutId) {
-                $http.put(`${FirebaseUrl}UserWorkouts/${userWorkouts}.json`,
-                        angular.toJson(userWorkouts))
+            if (id) {
+                $http.patch(`${FirebaseUrl}UserWorkouts/${id}.json`,
+                        angular.toJson(userWorkout))
                     .then((data) => {
                         resolve(data);
                     })
@@ -58,9 +58,9 @@ capApp.factory("UserWorkoutsFactory", function($q, $http, FirebaseUrl, FBcreds) 
                         reject(err);
                     });
             } else {
-                console.log("id can't be found");
+                console.log("Sorry We've Lost Your Identity");
             }
         });
     };
-     return { getUserWorkouts, saveUserWorkout, saveEditedUserWorkout, deleteUserWorkout };
+    return { getUserWorkouts, saveUserWorkout, saveEditedUserWorkout, deleteUserWorkout };
 });
