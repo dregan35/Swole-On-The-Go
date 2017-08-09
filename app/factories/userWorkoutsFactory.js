@@ -29,7 +29,7 @@ capApp.factory("UserWorkoutsFactory", function($q, $http, FirebaseUrl, FBcreds) 
         });
     };
 
-    let editUserWorkout = (userWorkouts) => {
+    let saveEditedUserWorkout = (userWorkouts) => {
         return $q((resolve, reject) => {
             let userWorkoutId = userWorkouts.id;
             if (userWorkoutId) {
@@ -62,5 +62,5 @@ capApp.factory("UserWorkoutsFactory", function($q, $http, FirebaseUrl, FBcreds) 
             }
         });
     };
-     return { getUserWorkouts, saveUserWorkout, editUserWorkout, deleteUserWorkout };
+     return { getUserWorkouts, saveUserWorkout, saveEditedUserWorkout, deleteUserWorkout };
 });
