@@ -1,6 +1,6 @@
 'use strict';
 
-capApp.controller("UserWorkoutsController", function($scope, $window, UserFactory, UserWorkoutsFactory) {
+capApp.controller("UserWorkoutsController", function($scope, $window, UserFactory, $routeParams, UserWorkoutsFactory) {
  
     // $scope.workouts = [];
 
