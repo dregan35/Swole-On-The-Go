@@ -38,7 +38,7 @@ capApp.controller("WorkoutController", function($scope, $window, WorkoutFactory,
         workoutItem.uid = UserFactory.getUser();
         WorkoutFactory.postNewWorkout(workoutItem)
             .then((data) => {
-                // alert("Thank You for Adding This Workout");
+                $window.alert("Thank You for Adding This Workout");
                 console.log("New Workout Data", data);
                 $window.location.href = '#!/capapp/view';
 
