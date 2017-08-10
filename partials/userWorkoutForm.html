@@ -1,10 +1,11 @@
 <div class="form-group">
     <h4 class="card-text"><h4> {{workoutItem.BodyPart}}</h4>
-    <p class="card-text">Exercise Name: {{workoutItem.description}}</p>
-    <img class="card-img-top" ng-src="{{workoutItem.url}}" alt="Card image cap">
-    <p class="card-text">UID: {{workoutItem.uid}}
-    <input type="text" name="RepsG" ng-model="workoutItem.repsG" placeholder="Reps to gain">
-    <input type="text" name="RepsL" ng-model="workoutItem.repsL" placeholder="Reps to lose">
-    <input type="text" name="Sets" ng-model="workoutItem.sets" placeholder="Sets">
-    <input type="button" class="btn btn-default" value="Add To Workouts" ng-click="saveUserInput(workoutItem)">
+    <p class="card-text">{{workoutItem.description}}</p>
+    <img class="card-img-top" ng-src="{{workoutItem.url}}">
+    <p class="card-text">{{workoutItem.uid}}
+        <input type="text" name="RepsG" ng-model="workoutItem.repsG" placeholder="Reps To Gain Muscle">
+        <input type="text" name="RepsL" ng-model="workoutItem.repsL" placeholder="Reps To Lose Weight">
+        <input type="text" name="Sets" ng-model="workoutItem.sets" placeholder="Number Of Sets">
+        <input type="text" name="Rest" ng-model="workoutItem.Rest" placeholder="Rest Time Between Sets">
+        <input type="button" class="btn btn-default" value="Saved Edited Workout" ng-click="saveUserInput(workoutItem)" style="color:#800020; background-color: slategray;">
 </div>

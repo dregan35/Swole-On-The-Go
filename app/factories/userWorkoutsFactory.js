@@ -3,14 +3,13 @@
 capApp.factory("UserWorkoutsFactory", function($q, $http, FirebaseUrl, FBcreds) {
 
     let getUserWorkouts = (userId) => {
-        console.log("userId", userId);
         return $q((resolve, reject) => {
             $http.get(`${FirebaseUrl}UserWorkouts.json?orderBy="uid"&equalTo="${userId}"`)
                 .then((userWorkoutsData) => {
                     resolve(userWorkoutsData);
                 })
                 .catch((err) => {
-                    console.log("oops", err);
+                    console.log("Error in UWF", err);
                     reject(err);
                 });
         });
@@ -30,7 +29,6 @@ capApp.factory("UserWorkoutsFactory", function($q, $http, FirebaseUrl, FBcreds) 
     };
 
     let saveEditedUserWorkout = (id, userWorkout) => {
-        console.log("userWorkouts", id);
         return $q((resolve, reject) => {
             if (id) {
                 $http.patch(`${FirebaseUrl}UserWorkouts/${id}.json`,

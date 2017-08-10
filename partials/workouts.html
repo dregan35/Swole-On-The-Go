@@ -1,9 +1,13 @@
-<div ng-repeat="workoutItem in workouts"><div class="workoutCard"><h4 class="card-text"><h4> {{workoutItem.BodyPart}}</h4>
-            <p class="card-text">Exercise Name: {{workoutItem.description}}</p>
-            <img class="card-img-top" ng-src="{{workoutItem.url}}" alt="Card image cap">
-            <p class="card-text">Number Of Sets: {{workoutItem.sets}}</p>
-            <p class="card-text">Number Of Reps To Cut Weight: {{workoutItem.repsL}}</p>
-            <p class="card-text">Number Of Reps To Gain Muscle: {{workoutItem.repsG}}</p>
-            <p class="card-text">Rest Time Between Sets: {{workoutItem.Rest}}</p>
-            <input type="button" class="btn btn-default"  ng-click="deleteUserCard(workoutItem.id)" value="Delete This Workout"><a class="btn btn-default"  ng-href="#!/capapp/edit/{{workoutItem.id}}">Edit This Workout</a>
-            </div></div><br>
+<div ng-repeat="workoutItem in workouts">
+    <div class="workoutCard" style="color:white; font-family: 'Abril Fatface', cursive; font-size: 18px;">
+        <h4 class="card-text"><h4> {{workoutItem.BodyPart}}</h4>
+        <p class="card-text">Exercise Name: {{workoutItem.description}}</p>
+        <img class="card-img-top" ng-src="{{workoutItem.url}}" alt="Card image cap">
+        <p class="card-text">Number Of Sets: {{workoutItem.sets}}</p>
+        <p class="card-text">Number Of Reps To Cut Weight: {{workoutItem.repsL}}</p>
+        <p class="card-text">Number Of Reps To Gain Muscle: {{workoutItem.repsG}}</p>
+        <p class="card-text">Rest Time Between Sets: {{workoutItem.Rest}}</p>
+        <input type="button" class="btn btn-default" ng-click="deleteUserCard(workoutItem.id)" value="Delete This Workout" style="color:#800020; background-color: slategray;"><a class="btn btn-default" style="color:#800020; background-color: slategray;" ng-href="#!/capapp/edit/{{workoutItem.id}}">Edit This Workout</a>
+    </div>
+</div>
+<br>

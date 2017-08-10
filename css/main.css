@@ -1,3 +1,18 @@
+body {
+    background-color: #004B8D;
+}
+
+.workoutCard {
+    border-style: outset;
+    border-width: 5px;
+    border-color: slategray;
+}
+
+#tag {
+    color:#800020;
+    font-size: 48px; padding-left: 12em; 
+    font-family: font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;"
+}
 
 
 /*# sourceMappingURL=main.css.map */
