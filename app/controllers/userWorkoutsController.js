@@ -1,7 +1,7 @@
 'use strict';
 
 capApp.controller("UserWorkoutsController", function($scope, $window, UserFactory, $routeParams, UserWorkoutsFactory) {
- 
+
     // $scope.workouts = [];
 
     function fetchUserWorkouts() {
@@ -9,7 +9,6 @@ capApp.controller("UserWorkoutsController", function($scope, $window, UserFactor
         let currentUser = UserFactory.getUser();
         UserWorkoutsFactory.getUserWorkouts(currentUser)
             .then((workoutList) => {
-                console.log("workoutlist", workoutList);
                 let workoutData = workoutList.data;
                 Object.keys(workoutData).forEach((key) => {
                     workoutData[key].id = key;
@@ -18,21 +17,19 @@ capApp.controller("UserWorkoutsController", function($scope, $window, UserFactor
                 $scope.workouts = workoutArr;
             })
             .catch((err) => {
-                console.log("error", err);
+                console.log("Could Not Retrieve Workouts", err);
             });
 
     }
     fetchUserWorkouts();
 
-
     $scope.deleteUserCard = (cardId) => {
-    console.log("delete called", cardId);
-    UserWorkoutsFactory.deleteUserWorkout(cardId)
-    .then( (data) => {
-      console.log("removed item", data);
-      fetchUserWorkouts();
-    });
-  };
+        console.log("delete called", cardId);
+        UserWorkoutsFactory.deleteUserWorkout(cardId)
+            .then((data) => {
+                console.log("Deleted Workout", data);
+                fetchUserWorkouts();
+            });
+    };
 
 });
-
