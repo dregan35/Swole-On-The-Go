@@ -1,7 +1,8 @@
+
 <div class="container">
     <form name="workout">
+    <img id="trex" ng-src="https://i.pinimg.com/564x/1c/6b/8c/1c6b8c4308bf78a3985db697b136cbd3.jpg" alt="Card image cap" height="300" width="840" style="align-content: center">
         <label for="workout" style="color:white; font-size: 24px;"> Select A Body Part: </label>
-        <br>
         <select ng-change="chosenOption()" name="workout" id="BodyParts" ng-model="bodypart">
             <!--       <option ng-repeat="workoutItem in workouts" value="workoutItem.Bodypart"></option>
  -->
@@ -13,19 +14,20 @@
             <option value="Back">Back</option>
             <option value="Abs">Abs</option>
         </select>
-        <br>
-        <div class="card-group" ng-show="selectChanged" ng-repeat="workoutItem in workouts | filter:bodypart">
-            <div class="card">
-                <div class="card-block">
-                    <h4 class="card-text">{{workoutItem.BodyPart}}</h4>
-                    <p class="card-text">Exercise Name: {{workoutItem.description}}</p>
-                    <img class="card-img-top" ng-src="{{workoutItem.url}}" alt="Card image cap" height="350" width="300">
-                    <p class="card-text">Number Of Sets: {{workoutItem.sets}}</p>
-                    <p class="card-text">Number Of Reps To Cut Weight: {{workoutItem.repsL}}</p>
-                    <p class="card-text">Number Of Reps To Gain Muscle: {{workoutItem.repsG}}</p>
-                    <p class="card-text">Rest Time Between Sets: {{workoutItem.Rest}}</p>
-                    <input type="button" class="btn btn-default" ng-click="saveWorkout(workoutItem)" value="Add To My Workout" style="color:#800020; background-color: slategray;">
-                    
-                </div>
+    </form>
+    <div class="card-group" ng-show="selectChanged" ng-repeat="workoutItem in workouts | filter:bodypart">
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-text">{{workoutItem.BodyPart}}</h4>
+                <p class="card-text">Exercise Name: {{workoutItem.description}}</p>
+                <img class="card-img-top" ng-src="{{workoutItem.url}}" alt="Card image cap" height="350" width="300">
+                <p class="card-text">Number Of Sets: {{workoutItem.sets}}</p>
+                <p class="card-text">Number Of Reps To Cut Weight: {{workoutItem.repsL}}</p>
+                <p class="card-text">Number Of Reps To Gain Muscle: {{workoutItem.repsG}}</p>
+                <p class="card-text">Rest Time Between Sets: {{workoutItem.Rest}}</p>
+                <input type="button" class="btn btn-default" ng-click="saveWorkout(workoutItem)" value="Add To My Workout" style="color:#800020; background-color: slategray;">
             </div>
         </div>
+    </div>
+</div>
+</div>

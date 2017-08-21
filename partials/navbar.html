@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" ng-controller="NavController" style="background-color: #004B8D;">
+<nav class="navbar navbar-default" ng-controller="NavController" style="background-color: #004B8D; padding-left: 35em;">
     <div class="container-fluid">
         <div class="navbar-header"
         style="-webkit-text-stroke: 1.9px #800020;
@@ -10,8 +10,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
             <li ng-show="isLoggedIn"><a ng-href="#!/capapp/view" style="color: white">Home</a></li>
-            <li ng-show="isLoggedIn"><a ng-href="#!/capapp/MyWorkouts" style="color: white;">My Workouts</a></li>
-            <li><a ng-show="isLoggedIn" ng-click="logout()" style="color: white;">Logout</a></li>
+            <li ng-show="isLoggedIn"><a ng-href="#!/capapp/MyWorkouts" style="color: white;">My Workouts</a></li>            
+            <li ng-show="isLoggedIn"><a style="color:white;" ng-href="#!/capapp/map">Nearby Gyms</a>
+            <li ng-show="isLoggedIn"><a ng-click="logout()" style="color: white;">Logout</a></li>
     </div>
     </div>
 </nav>

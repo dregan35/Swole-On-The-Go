@@ -9,6 +9,9 @@ body {
 .img {
     padding-left: 15em;    
 }
+#trex {
+	padding-right: 10em;
+}
 
 .card-block {
     text-align: center;
@@ -45,12 +48,13 @@ body {
 #tag {
     color: white;
     font-size: 48px;
-    padding-left: 12em;
+    padding-left: 2em;
     font-family: font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    "
 
 }
 
+
+ /**/
 
 
 /*# sourceMappingURL=main.css.map */
