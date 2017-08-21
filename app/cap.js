@@ -36,5 +36,10 @@ capApp.config(($routeProvider) => {
             controller: 'editUserWorkoutController',
             resolve: { isAuth }
         })
+        .when('/capapp/map', {
+            templateUrl: 'partials/map.html',
+            controller: 'MapController',
+            resolve: {  }
+        })
         .otherwise('/');
 });
